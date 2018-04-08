@@ -1,0 +1,31 @@
+body {
+    background-color: grey;
+}
+#login{
+    background-color: aquamarine;
+    border-bottom-style: groove;
+    width: 600px;
+    height: 400px;
+    margin: 100px auto;
+}
+
+#t_head {
+    font-size: 30px;
+    text-align: center;
+    display: block;
+    padding-top: 50px;
+}
+
+.t_input{
+    text-align: center;
+    display: block;
+}
+
+a{
+    text-decoration: none;
+}
+#login p {
+    text-align: center;
+    display: block;
+    padding-top: 80px;
+}
