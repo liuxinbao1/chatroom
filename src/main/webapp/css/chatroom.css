@@ -1,0 +1,11 @@
+body{
+    margin: 0;
+}
+
+#head{
+    width: 1366px;
+    height: 200px;
+    background-image: url("../image/shiki.jpg");
+    background-position: -300px -150px;
+    background-repeat: no-repeat;
+}
