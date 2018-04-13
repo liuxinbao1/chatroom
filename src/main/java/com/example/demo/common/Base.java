@@ -30,7 +30,7 @@ public class Base {
 	/**
 	 * 状态.
 	 */
-	private String stauts;
+	private String status;
 	
 	public String getCreateBy() {
 		return createBy;
@@ -64,18 +64,18 @@ public class Base {
 		this.lastUpdateTime = lastUpdateTime;
 	}
 
-	public String getStauts() {
-		return stauts;
+	public String getStatus() {
+		return status;
 	}
 
-	public void setStauts(String stauts) {
-		this.stauts = stauts;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	@Override
 	public String toString() {
 		return "Base [createBy=" + createBy + ", createTime=" + createTime + ", lastUpdateBy=" + lastUpdateBy
-				+ ", lastUpdateTime=" + lastUpdateTime + ", stauts=" + stauts + "]";
+				+ ", lastUpdateTime=" + lastUpdateTime + ", status=" + status + "]";
 	}
 	
 }

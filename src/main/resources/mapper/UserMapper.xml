@@ -1,0 +1,20 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.UserDao">
+	
+	<!-- 用户注册sql -->
+	<insert id="register">
+		insert into t_user
+			(id,name,psswd,admin,status,create_time)
+		values
+			(
+				UUID(),
+				#{user.name, jdbcType=VARCHAR},
+				#{user.psswd, jdbcType=VARCHAR},
+				#{user.admin, jdbcType=VARCHAR},
+				#{user.status, jdbcType=VARCHAR},
+				now()
+			)
+	</insert>
+</mapper>

@@ -22,7 +22,7 @@ public class UserVO extends Base{
 	/**
 	 * 用户密码.
 	 */
-	private String passwd;
+	private String psswd;
 
 	/**
 	 * 管理员.
@@ -40,11 +40,11 @@ public class UserVO extends Base{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPasswd() {
-		return passwd;
+	public String getPsswd() {
+		return psswd;
 	}
-	public void setPasswd(String passwd) {
-		this.passwd = passwd;
+	public void setPsswd(String passwd) {
+		this.psswd = passwd;
 	}
 	public String getAdmin() {
 		return admin;
@@ -54,7 +54,7 @@ public class UserVO extends Base{
 	}
 	@Override
 	public String toString() {
-		return "UserVO [id=" + id + ", name=" + name + ", passwd=" + passwd + ", admin=" + admin + "]";
+		return "UserVO [id=" + id + ", name=" + name + ", passwd=" + psswd + ", admin=" + admin + "]";
 	}
 	
 }
