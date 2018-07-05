@@ -1,0 +1,22 @@
+#register{
+    display: -webkit-box;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    -moz-box-align: center;
+    -webkit-box-align: center;
+    -moz-box-pack: center;
+    -webkit-box-pack: center;
+}
+h1,div{
+    text-align: center;
+}
+
+#warning{
+    position: absolute;
+    color: red;
+}
+
+#idPass{
+    color: #4aca6d;
+}

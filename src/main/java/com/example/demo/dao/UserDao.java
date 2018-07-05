@@ -23,5 +23,20 @@ public interface UserDao {
 	 */
 	int register(@Param("user") UserVO userVO);
 
-	
+	/**
+	 * 查询用户数量.
+	 *
+	 * @param name 用户数量
+	 * @return int 用户数量
+	 */
+	int isRepeat(@Param("name") String name);
+
+	/**
+	 * 根据用户名查询密码.
+	 *
+	 * @param userVO 用户对象
+	 * @return 密码
+	 */
+	String findPassWord(UserVO userVO);
+
 }
