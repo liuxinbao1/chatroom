@@ -6,6 +6,14 @@ body{
     width: 1366px;
     height: 200px;
     background-image: url("../image/shiki.jpg");
-    background-position: -300px -150px;
+    background-position:  -300px -150px;
     background-repeat: no-repeat;
+}
+
+#h-left{
+    height: 80px;
+    width: 1366px;
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+    background-color: #ffffff66;
 }

@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+        <link rel="stylesheet" type="text/css" href="css/register.css">
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+        <title>填写注册信息</title>
+        <script>
+            $(document).ready(function(){
+                // 注册
+                $("#submit").click(function(){
+                    if(trim($("#username").val()).length == 0){
+                        alert("请输入用户名");
+                    }else if(trim(($("#password").val())).length == 0) {
+                        alert("请输入密码");
+                    } else {
+                        var obj = {};
+                        var formObj = $("#formId").serializeArray();
+                        $.each(formObj, function(i, item){
+                            obj[item.name] = item.value;
+                        });
+                        $.ajax({
+                            url:"http://chatroom.com:8080/user/register",
+                            type:"POST",
+                            dataType:"json",
+                            data:JSON.stringify(obj),
+                            contentType:"application/json",
+                            success:function(data){
+                                // var obj = JSON.parseJSON(data);
+                                // var obj = data.parseJSON();
+                                if(data.returnStatus == "S"){
+                                    alert("注册成功");
+                                    self.location = "login.html";
+                                } else if(data.returnStatus == "F") {
+                                    alert("注册失败");
+                                    location.reload();
+                                }
+                            }
+                        });
+                    }
+                });
+
+                //姓名不重复请求
+                $("#username").keyup(function(){
+                    $.ajax({
+                        url:"http://chatroom.com:8080/user/isRepeat?name=" + $("#username").val(),
+                        type:"GET",
+                        dataType:"json",
+                        contentType: "application/json",
+                        success:function(data){
+                            if(data.returnStatus == "S") {
+                                $("#warning").hide();
+                                $("#idPass").show();
+                            } else {
+                                $("#idPass").hide();
+                                $("#warning").show();
+                            }
+                        }
+                    });
+                });
+            });
+            
+            function trim(str) {
+                return str.replace(/(^\s*)|(\s*$)/g, "");
+            }
+        </script>
+    </head>
+    <body>
+        <div id="register">
+            <form id="formId">
+                <h1>聊天室注册</h1>
+                <div>用户名:<input id="username" type="text" name="name"/><span id="warning" hidden>用户名重复,请换一个用户名</span><br/></div>
+                <span id="idPass" hidden>用户名可用</span><br/>
+                <div>密&nbsp;&nbsp;&nbsp;码:<input id="password" type="password" name="psswd"/><br/><br/></div>
+                <div><input id="submit" type="button" value="注册"/></div>
+            </form>
+        </div>
+    </body>
+</html>
